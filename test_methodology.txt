@@ -1,0 +1,8 @@
+# Project Methodology for Academic Review:
+# Target: Multivariate Temporal Anomaly Detection using Unsupervised Deep Learning
+
+Our project designs a methodology to identify anomalies in high-frequency multivariate time-series data (specifically factory sensor telemetry). 
+
+We employ an LSTM-based Autoencoder model. The network compresses the sequence data into a lower-dimensional latent representation and reconstructs it. Sequences with reconstruction errors exceeding an adaptive threshold (calculated using dynamic rolling standard deviation) are flagged as anomalies. 
+
+To improve convergence speed and model robustness against sudden changes in environmental noise, we incorporate a temporal time-decay weighting function on the loss function, giving newer observation sequences slightly higher weights during backpropagation.
